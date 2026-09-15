@@ -1,0 +1,15 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 4%;
+}
+.navbar .logo{
+    /* image.jpeg is square, so size by height. */
+    height: 56px;
+    width: auto;
+    object-fit: contain;
+}
+.navbar .profile{
+    width: 40px;
+}

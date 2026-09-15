@@ -1,0 +1,197 @@
+/* Two-column layout: brand panel on the left, form on the right. */
+.login-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    animation: fadeIn 0.4s;
+}
+
+/* ---------- LEFT: brand panel ---------- */
+.login-brand {
+    background: linear-gradient(160deg, #FF7A45 0%, #FF4C24 100%);
+    color: #ffffff;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+}
+
+.login-brand-logo {
+    width: 190px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.login-brand h1 {
+    font-size: max(2.4vw, 30px);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.login-brand p {
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 380px;
+    opacity: 0.92;
+}
+
+/* ---------- RIGHT: the form ---------- */
+.login-form-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    background-color: #fffaf8;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Only shown on small screens, where the brand panel is hidden. */
+.login-card-logo {
+    display: none;
+    width: 120px;
+    align-self: center;
+    border-radius: 16px;
+}
+
+.login-card h2 {
+    font-size: 28px;
+    color: #1f1f1f;
+    font-weight: 600;
+}
+
+.login-card-subtitle {
+    font-size: 15px;
+    color: #7c7c7c;
+    margin-top: -12px;
+}
+
+.login-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.login-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.login-field label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #49557E;
+}
+
+.login-field input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    border: 1px solid #E0DAD7;
+    border-radius: 8px;
+    outline: none;
+    background-color: #ffffff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-field input:focus {
+    border-color: #FF4C24;
+    box-shadow: 0 0 0 3px rgba(255, 76, 36, 0.12);
+}
+
+/* Wrapper so the Show/Hide button can sit inside the password box. */
+.login-password-wrap {
+    position: relative;
+}
+
+.login-password-wrap input {
+    padding-right: 66px;
+}
+
+.login-password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: #FF4C24;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 4px 6px;
+}
+
+.login-submit {
+    margin-top: 4px;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background-color: #FF4C24;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.login-submit:hover:enabled {
+    background-color: #e63f1a;
+}
+
+.login-submit:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.login-switch {
+    font-size: 15px;
+    color: #6f6f6f;
+    text-align: center;
+}
+
+.login-switch span {
+    color: #FF4C24;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.login-switch span:hover {
+    text-decoration: underline;
+}
+
+.login-terms {
+    font-size: 12px;
+    color: #a2a2a2;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* ---------- Responsive: single column below 900px ---------- */
+@media (max-width: 900px) {
+    .login-page {
+        grid-template-columns: 1fr;
+    }
+
+    .login-brand {
+        display: none;
+    }
+
+    .login-card-logo {
+        display: block;
+    }
+
+    .login-form-side {
+        min-height: 100vh;
+    }
+}
